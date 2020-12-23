@@ -1,9 +1,12 @@
+function mine(N,bn)
 I = imread('tiles.jpg');
 %image(X); 32*32; 32*384
 X = im2double(I);
 
-N=10; %幾乘幾
-bn=15; %炸彈數
+
+
+%N=10; %幾乘幾
+%bn=15; %炸彈數
 count = 0; %計點開數
 
 background = zeros([32*N,32*N,3]);
@@ -290,4 +293,5 @@ while count < N^2-bn
         break
     end
     
+end
 end
