@@ -3,7 +3,11 @@ I = imread('tiles.jpg');
 %image(X); 32*32; 32*384
 X = im2double(I);
 
-
+if N^2 < bn
+    disp("炸彈比格子多是怎樣")
+elseif N^2 == bn
+    disp("全是炸彈就別玩了吧")
+else
 
 %N=10; %幾乘幾
 %bn=15; %炸彈數
@@ -293,5 +297,6 @@ while count < N^2-bn
         break
     end
     
+end
 end
 end
