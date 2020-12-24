@@ -50,8 +50,159 @@ function mine(N,bn)
             if button==1
                 gi = floor(y/32)+2;
                 gj = floor(x/32)+2;
-
-                if backinfo(gi,gj)==-1 || backinfo(gi,gj)==3
+                
+                if backinfo(gi,gj)==1
+                    numb = 0;
+                    for ii = 0:2
+                        for jj = 0:2
+                            if backinfo(gi+ii-1,gj+jj-1) == -1 || backinfo(gi+ii-1,gj+jj-1) == 3
+                                numb = numb+1;
+                            end
+                        end
+                    end
+                    
+                    numf = 0;
+                    for ii = 0:2
+                        for jj = 0:2
+                            if backinfo(gi+ii-1,gj+jj-1) == 2 || backinfo(gi+ii-1,gj+jj-1) == 3
+                                numf = numf+1;
+                            end
+                        end
+                    end
+                    find=0;
+                    if numb == numf
+                        %
+                        m = [];
+                        m = [m,gi,gj+1];
+                        m = [m,gi,gj-1];
+                        m = [m,gi+1,gj+1];
+                        m = [m,gi+1,gj-1];
+                        m = [m,gi+1,gj];
+                        m = [m,gi-1,gj+1];
+                        m = [m,gi-1,gj-1];
+                        m = [m,gi-1,gj];
+                        c = 0;
+                        while c < length(m)
+                            a = m(c+1);
+                            b = m(c+2);
+                            if a==1 ||b ==1 || a==N+2 || b==N+2
+                                c = c+2;
+                                continue
+                            end
+                            if backinfo(a,b) == -1
+                                for ii = 1:32
+                                    for jj = 1:32
+                                        background((a-2)*32+ii,(b-2)*32+jj,1)=X(ii,jj+32*9,1);
+                                        background((a-2)*32+ii,(b-2)*32+jj,2)=X(ii,jj+32*9,2);
+                                        background((a-2)*32+ii,(b-2)*32+jj,3)=X(ii,jj+32*9,3);
+                                    end
+                                end
+                                image(background);drawnow;
+                                find=1;
+                                break
+                            end
+                            if backinfo(a,b) == 0
+                                n = 0;
+                                for ii = 0:2
+                                    for jj = 0:2
+                                        if backinfo(a+ii-1,b+jj-1) == -1 || backinfo(a+ii-1,b+jj-1) == 3
+                                            n = n+1;
+                                        end
+                                    end
+                                end
+                                if n == 0
+                                    m = [m,a+1,b];
+                                    m = [m,a,b+1];
+                                    m = [m,a-1,b];
+                                    m = [m,a,b-1];
+                                    m = [m,a+1,b+1];
+                                    m = [m,a+1,b-1];
+                                    m = [m,a-1,b+1];
+                                    m = [m,a-1,b-1];
+                                    for ii = 1:32
+                                        for jj = 1:32
+                                            background((a-2)*32+ii,(b-2)*32+jj,1)=X(ii,jj,1);
+                                            background((a-2)*32+ii,(b-2)*32+jj,2)=X(ii,jj,2);
+                                            background((a-2)*32+ii,(b-2)*32+jj,3)=X(ii,jj,3);
+                                        end
+                                    end
+                                elseif n == 1
+                                    for ii = 1:32
+                                        for jj = 1:32
+                                            background((a-2)*32+ii,(b-2)*32+jj,1)=X(ii,jj+32,1);
+                                            background((a-2)*32+ii,(b-2)*32+jj,2)=X(ii,jj+32,2);
+                                            background((a-2)*32+ii,(b-2)*32+jj,3)=X(ii,jj+32,3);
+                                        end
+                                    end
+                                elseif n == 2
+                                    for ii = 1:32
+                                        for jj = 1:32
+                                            background((a-2)*32+ii,(b-2)*32+jj,1)=X(ii,jj+32*2,1);
+                                            background((a-2)*32+ii,(b-2)*32+jj,2)=X(ii,jj+32*2,2);
+                                            background((a-2)*32+ii,(b-2)*32+jj,3)=X(ii,jj+32*2,3);
+                                        end
+                                    end
+                                elseif n == 3
+                                    for ii = 1:32
+                                        for jj = 1:32
+                                            background((a-2)*32+ii,(b-2)*32+jj,1)=X(ii,jj+32*3,1);
+                                            background((a-2)*32+ii,(b-2)*32+jj,2)=X(ii,jj+32*3,2);
+                                            background((a-2)*32+ii,(b-2)*32+jj,3)=X(ii,jj+32*3,3);
+                                        end
+                                    end
+                                elseif n == 4
+                                    for ii = 1:32
+                                        for jj = 1:32
+                                            background((a-2)*32+ii,(b-2)*32+jj,1)=X(ii,jj+32*4,1);
+                                            background((a-2)*32+ii,(b-2)*32+jj,2)=X(ii,jj+32*4,2);
+                                            background((a-2)*32+ii,(b-2)*32+jj,3)=X(ii,jj+32*4,3);
+                                        end
+                                    end
+                                elseif n == 5
+                                    for ii = 1:32
+                                        for jj = 1:32
+                                            background((a-2)*32+ii,(b-2)*32+jj,1)=X(ii,jj+32*5,1);
+                                            background((a-2)*32+ii,(b-2)*32+jj,2)=X(ii,jj+32*5,2);
+                                            background((a-2)*32+ii,(b-2)*32+jj,3)=X(ii,jj+32*5,3);
+                                        end
+                                    end
+                                elseif n == 6
+                                    for ii = 1:32
+                                        for jj = 1:32
+                                            background((a-2)*32+ii,(b-2)*32+jj,1)=X(ii,jj+32*6,1);
+                                            background((a-2)*32+ii,(b-2)*32+jj,2)=X(ii,jj+32*6,2);
+                                            background((a-2)*32+ii,(b-2)*32+jj,3)=X(ii,jj+32*6,3);
+                                        end
+                                    end
+                                elseif n == 7
+                                    for ii = 1:32
+                                        for jj = 1:32
+                                            background((a-2)*32+ii,(b-2)*32+jj,1)=X(ii,jj+32*7,1);
+                                            background((a-2)*32+ii,(b-2)*32+jj,2)=X(ii,jj+32*7,2);
+                                            background((a-2)*32+ii,(b-2)*32+jj,3)=X(ii,jj+32*7,3);
+                                        end
+                                    end
+                                elseif n == 8
+                                    for ii = 1:32
+                                        for jj = 1:32
+                                            background((a-2)*32+ii,(b-2)*32+jj,1)=X(ii,jj+32*8,1);
+                                            background((a-2)*32+ii,(b-2)*32+jj,2)=X(ii,jj+32*8,2);
+                                            background((a-2)*32+ii,(b-2)*32+jj,3)=X(ii,jj+32*8,3);
+                                        end
+                                    end
+                                end
+                                backinfo(a,b)=1;
+                                count = count+1;
+                            end
+                            c = c+2;
+                        end
+                        %
+                    end
+                    if find == 1
+                        break
+                    end
+                    image(background);drawnow;
+                elseif backinfo(gi,gj)==-1 || backinfo(gi,gj)==3
                     for ii = 1:32
                         for jj = 1:32
                             background((gi-2)*32+ii,(gj-2)*32+jj,1)=X(ii,jj+32*9,1);
