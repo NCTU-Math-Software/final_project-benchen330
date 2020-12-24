@@ -29,6 +29,7 @@ image(background);drawnow;
 
 backinfo=zeros([N+2,N+2]);
 % 0=close, 1=open, 2=flag, 3=flagBomb, -1=bomb
+%{
 count = bn;
 while count > 0
     b=randi([2,2+N-1],1,2);
@@ -39,7 +40,7 @@ while count > 0
         count = count-1;
     end
 end
-
+%}
 while count < N^2-bn
     [x,y,button] = ginput(1);
     %disp(button)
@@ -60,7 +61,19 @@ while count < N^2-bn
             end
             image(background);drawnow;
             break
-        elseif backinfo(gi,gj)==0 ||  backinfo(gi,gj)==2
+        elseif backinfo(gi,gj)==0 || backinfo(gi,gj)==2
+            if count == 0
+                cc = bn;
+                while cc > 0
+                    b=randi([2,2+N-1],1,2);
+                    if backinfo(b(1),b(2))==-1 || (abs(b(1)-gi)<=1 && abs(b(2)-gj)<=1 )
+                        continue
+                    else
+                        backinfo(b(1),b(2))=-1;
+                        cc = cc-1;
+                    end
+                end        
+            end
             num = 0;
             for ii = 0:2
                 for jj = 0:2
@@ -250,6 +263,7 @@ while count < N^2-bn
             end
             backinfo(gi,gj) = 1;
             image(background);drawnow;
+            
         end
     elseif button==3
         gi = floor(y/32)+2;
