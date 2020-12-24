@@ -256,7 +256,7 @@ function mine(N,bn)
                                 c = c+2;
                                 continue
                             end
-                            if backinfo(a,b) == 0
+                            if backinfo(a,b) == 0 || backinfo(a,b) == 2
                                 n = 0;
                                 for ii = 0:2
                                     for jj = 0:2
