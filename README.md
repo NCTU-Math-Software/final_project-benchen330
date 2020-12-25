@@ -5,6 +5,8 @@ chebsnake, shooting, 踩地雷
 
 12/24完成了踩地雷, mine.m, tiles.jpg(網上的踩地雷格子圖)
 
+
+
 如何跑程式:
 
     1.下載mine.m和tiles.jpg
@@ -23,9 +25,9 @@ chebsnake, shooting, 踩地雷
   
 結束條件:
 
-    1.點到炸彈
+    1.點到炸彈(lose)
     
-    2.非炸彈格都點完
+    2.非炸彈格都點完(win)
   
 程式內容:
 
