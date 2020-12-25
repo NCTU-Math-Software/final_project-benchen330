@@ -5,6 +5,8 @@
     1.下載mine.m和tiles.jpg
 
     2.mine(N,bn); //N代表N乘N格，bn代表炸彈數
+    
+    例:mine(10,15); //10*10格，15個炸彈
 
 玩法:
 
