@@ -1,11 +1,4 @@
-# final_project-benchen330
-final_project-benchen330 created by GitHub Classroom
-
-chebsnake, shooting, 踩地雷
-
-12/24完成了踩地雷, mine.m, tiles.jpg(網上的踩地雷格子圖)
-
-<踩地雷>
+#踩地雷
 
 如何跑程式:
 
