@@ -5,7 +5,11 @@ chebsnake, shooting, 踩地雷
 
 12/24完成了踩地雷, mine.m, tiles.jpg(網上的踩地雷格子圖)
 
-mine(N,bn); N代表N乘N格，bn代表炸彈數
+如何跑程式:
+
+    1.下載mine.m和tiles.jpg
+
+    2.mine(N,bn); //N代表N乘N格，bn代表炸彈數
 
 玩法:
 
@@ -23,7 +27,7 @@ mine(N,bn); N代表N乘N格，bn代表炸彈數
     
     2.非炸彈格都點完
   
-內容:
+程式內容:
 
     background是遊玩畫面
 
