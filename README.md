@@ -5,7 +5,7 @@ chebsnake, shooting, 踩地雷
 
 12/24完成了踩地雷, mine.m, tiles.jpg(網上的踩地雷格子圖)
 
-
+<踩地雷>
 
 如何跑程式:
 
@@ -53,7 +53,7 @@ chebsnake, shooting, 踩地雷
         
         3.由位置的backinfo決定要對這個位置進行什麼變動
         
-        4.將改變的圖顯示
+        4.將改變的background顯示
         
         5.回到1.
         
